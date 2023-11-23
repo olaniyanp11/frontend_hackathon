@@ -2,7 +2,12 @@
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
+.main_dashboard {
+  background-color: #fff;
+}
+
 /* nav bar */
 #navbar {
   width: 100%;
@@ -35,22 +40,18 @@
 .searchbar svg {
   width: 15px;
 }
-input:-internal-autofill-selected {
-  appearance: menulist-button;
-  background-image: none !important;
+input:-webkit-autofill {
   background-color: transparent !important;
-  color: fieldtext !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: white !important;
 }
-.notification {
+
+.alert {
   padding: 5px;
-  display: flex;
-  justify-self: center;
-  align-items: center;
   border-radius: 5px;
- background-color: #1C181D;
-;
+  background-color: #1c181d;
 }
-.notification svg {
+.alert svg {
   width: 20px;
   height: 20px;
 }
@@ -59,8 +60,206 @@ input:-internal-autofill-selected {
   gap: 10px;
   align-items: center;
 }
-.davidcoll{
-    color: rgb(219, 219, 219);
-    padding: 5px;
-    background-color: #1C181D;
+/* right side of nav nar */
+.davidcoll {
+  color: rgb(219, 219, 219);
+  padding: 5px;
+  background-color: #1c181d;
+  display: flex;
+  border-radius: 8px;
+  gap: 10px;
+}
+.davidcoll .namelogo {
+  padding: 5px;
+  border-radius: 6px;
+  background: #36fba1;
+  color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+}
+/* notification part */
+main {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-inline: 2vh;
+  flex-direction: column;
+  margin-block: 20px;
+}
+.notification {
+  width: 70%;
+  padding: 6px;
+  padding-inline: 12px;
+  border-radius: 8px;
+  background: var(--grey-grey-300, #1a1a1a);
+  color: #e3e3e3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 3vh;
+}
+.notification button {
+  padding: 6px 12px;
+  gap: 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  box-shadow: 0px -1px 0px 0px #b5b5b5 inset;
+  font-size: 13px;
+}
+.notification > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.notification > p {
+  font-size: 13px;
+}
+.cancel {
+  width: 20px;
+}
+.setupboard {
+  width: 70%;
+  color: #303030;
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid var(--stroke-s-50, #dbdbdb);
+  background: var(--White, #fff);
+  box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+.progresscontainer {
+  width: 100px;
+  height: 5px;
+  display: inline-block;
+  border: 1px solid #1a1a1a;
+  border-radius: 10px;
+}
+.progresscontainer #progressvalue {
+  background-color: #1a1a1a;
+  display: inline-block;
+  height: 100%;
+}
+
+.setupboard .bar,
+article {
+  font-size: 12px;
+}
+.arrow {
+  display: block;
+  background-image: url("https://crushingit.tech/hackathon-assets/icon-arrow-down.svg");
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-size: cover;
+}
+.arrow.switch {
+  background-image: url("https://crushingit.tech/hackathon-assets/icon-arrow-up.svg");
+}
+.setupboard > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+.innerbox.topboard {
+  gap: 20px;
+}
+.innerbox article {
+  width: 80%;
+}
+.setupboard > div > div > h3 {
+  font-size: 16px;
+}
+/* sub boxes */
+
+.circlebtn {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  border: 2px dashed #1a1a1a;
+  background-position: center;
+  background-size: cover;
+}
+.circlebtn.add {
+  background-color: #303030;
+  background-image: url("https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg");
+}
+/* setup boxes section */
+.box {
+  width: 100%;
+  padding-inline: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 20px;
+}
+.box > .boxcontent {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: flex-start;
+}
+.box .customizeTheme {
+  border-radius: 6px;
+  border-top: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.2));
+  border-right: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.2));
+  border-left: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.2));
+  background: #404040;
+  box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333,
+    0px 2px 0px 0px #000;
+  display: flex;
+  padding: 5px 10px;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  margin-top: 20px;
+}
+/* box main div */
+#mainbox {
+  border-radius: 10px;
+  padding: 10px;
+}
+/* boxes sub heading */
+.innerbox {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+.innerbox h3 {
+  font-size: 14px;
+}
+#subprocesses.switch {
+  display: none;
+}
+.innerbox a,
+article {
+  font-size: 12px;
+}
+.innerbox a {
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  color: rgb(27, 125, 223);
+}
+.box > img {
+  width: 120px;
+}
+
+.subinner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  display: none;
 }
