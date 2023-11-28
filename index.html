@@ -15,15 +15,10 @@
     <section class="main_dashboard">
       <!-- navigation bar -->
       <nav id="navbar">
-        <span
-          ><img
-            src="https://crushingit.tech/hackathon-assets/shopify-icon-desktop.svg"
-            alt="Shopify"
-            class="logo"
-          />
-        </span>
+        <span><a href="https://shopify.com" tabindex="1"><div class="logo"></div> </span></a>
         <span class="searchbar">
           <svg
+           tabindex="2"
             xmlns="http://www.w3.org/2000/svg"
             width="32"
             height="32"
@@ -38,15 +33,19 @@
               fill="#fff"
             />
           </svg>
-          <input type="search" name="search" id="search" placeholder="Search"
+          <input type="search" name="search" id="search" placeholder="Search "
+           tabindex="3"
         /></span>
         <span class="navright">
-          <div class="alert">
+          <div
+            class="alert"
+            onclick="document.querySelector('.alertbox').classList.toggle('show')"tabindex="4"
+          >
             <svg
               width="41"
               height="40"
               viewBox="0 0 21 20"
-              fill="none"
+              fill="none"onclick="go()"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -57,9 +56,122 @@
               />
             </svg>
           </div>
-          <div class="davidcoll">
+          <div class="davidcoll" onclick="show()"  tabindex="3">
             <p>davidcollections</p>
             <span class="namelogo">DC</span>
+          </div>
+          <div class="alertbox">
+            <div>
+              <div>
+                <h3>Alert</h3>
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                  >
+                    <path
+                      d="M3 6C3 5.58579 3.33579 5.25 3.75 5.25H16.25C16.6642 5.25 17 5.58579 17 6C17 6.41421 16.6642 6.75 16.25 6.75H3.75C3.33579 6.75 3 6.41421 3 6Z"
+                      fill="#616161"
+                    />
+                    <path
+                      d="M6.75 14C6.75 13.5858 7.08579 13.25 7.5 13.25H12.5C12.9142 13.25 13.25 13.5858 13.25 14C13.25 14.4142 12.9142 14.75 12.5 14.75H7.5C7.08579 14.75 6.75 14.4142 6.75 14Z"
+                      fill="#616161"
+                    />
+                    <path
+                      d="M5.5 9.25C5.08579 9.25 4.75 9.58579 4.75 10C4.75 10.4142 5.08579 10.75 5.5 10.75H14.5C14.9142 10.75 15.25 10.4142 15.25 10C15.25 9.58579 14.9142 9.25 14.5 9.25H5.5Z"
+                      fill="#616161"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 22 22"
+                    fill="none"
+                  >
+                    <rect
+                      x="0.5"
+                      y="0.5"
+                      width="21"
+                      height="21"
+                      rx="4.5"
+                      stroke="#005BD3"
+                    />
+                    <path
+                      d="M14.2803 10.0303C14.5732 9.73744 14.5732 9.26256 14.2803 8.96967C13.9874 8.67678 13.5126 8.67678 13.2197 8.96967L10.25 11.9393L9.03033 10.7197C8.73744 10.4268 8.26256 10.4268 7.96967 10.7197C7.67678 11.0126 7.67678 11.4874 7.96967 11.7803L9.71967 13.5303C10.0126 13.8232 10.4874 13.8232 10.7803 13.5303L14.2803 10.0303Z"
+                      fill="#616161"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M18 11C18 14.866 14.866 18 11 18C7.13401 18 4 14.866 4 11C4 7.13401 7.13401 4 11 4C14.866 4 18 7.13401 18 11ZM16.5 11C16.5 14.0376 14.0376 16.5 11 16.5C7.96243 16.5 5.5 14.0376 5.5 11C5.5 7.96243 7.96243 5.5 11 5.5C14.0376 5.5 16.5 7.96243 16.5 11Z"
+                      fill="#616161"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="subone">
+                Alerts about your store and account will show here
+              </div>
+            </div>
+          </div>
+          <div class="allnotifications">
+            <header>
+              <div class="davidcoll dav2" onclick="go()">
+                <span class="namelogo">DC</span>
+                <p style="color: #000">davidcollections</p>
+              </div>
+
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <path
+                    d="M13.3332 4L5.99984 11.3333L2.6665 8"
+                    stroke="#303030"
+                    stroke-width="1.33333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </header>
+            <hr />
+            <div class="second" >
+              <img
+                src="https://crushingit.tech/hackathon-assets/icon-store.svg"
+                alt=""
+              />
+              <span>All stores</span>
+            </div>
+            <div onclick="go()">Changelog</div>
+            <div onclick="go()">Community forums</div>
+            <div onclick="go()">HelHire a Shopify Partnerp</div>
+            <div onclick="go()">Keyboard shortcuts</div>
+            <hr />
+            <div
+              style="
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 0px;
+              "onclick="go()"
+            >
+              <div onclick="go()">David Micheal</div>
+              <br />
+              <article style="margin-top: -15px" onclick="go()">
+                davidmicheal@gmail.com
+              </article>
+            </div>
+            <div onclick="go()">Manage account</div>
+            <div>Log out</div>
           </div>
         </span>
       </nav>
@@ -67,14 +179,17 @@
       <!-- main part  -->
       <main>
         <div class="notification">
-          <p>Extend your trial for $1/month for 3 months on select plans.</p>
-          <div>
-            <button>Select a plan</button>
+        <div class="sub">
+            <p>Extend your trial for $1/month for 3 months on select plans.</p>
+             <button tabindex="7">Select a plan</button>
+        </div>
+          <div class="b">
             <svg
               aria-label="close notification"
               class="cancel"
               id="cancel"
-              onclick="closenotification()"
+              tabindex="6"
+              onclick="closeNotification()"
               width="41"
               height="40"
               viewBox="0 0 21 20"
@@ -107,11 +222,11 @@
           <section class="subprocesses" id="subprocesses">
             <div class="box" id="mainbox">
               <div class="boxcontent">
-                <div class="circlebtn"onclick="showinner(0)"></div>
+                <div class="circlebtn" tabindex="7" id="svg" onclick="showInner(0)"></div>
                 <div class="innerbox">
                   <h3>Customize your online store</h3>
                   <div class="subinner" id="subinner">
-                    <div >
+                    <div>
                       <article>
                         Choose a theme and add your logo, colors, and images to
                         reflect your brand.
@@ -129,16 +244,22 @@
             </div>
             <div class="box" id="mainbox">
               <div class="boxcontent">
-                <div class="circlebtn"onclick="showinner(1)"></div>
+                <div class="circlebtn" tabindex="8" onclick="showInner(1)"></div>
                 <div class="innerbox">
-                  <h3 >Add your first product</h3>
+                  <h3>Add your first product</h3>
                   <div class="subinner" id="subinner">
-                    <div >
+                    <div>
                       <article>
-                        Write a description, add photos, and set pricing for the products you plan to sell.
+                        Write a description, add photos, and set pricing for the
+                        products you plan to sell.
                       </article>
                       <a href="#">Learn more</a>
-                      <button class="customizeTheme">Add product</button>
+                      <div style="display: flex; gap: 20px">
+                        <button class="customizeTheme">Add product</button>
+                        <button class="customizeTheme custom">
+                          Add product
+                        </button>
+                      </div>
                     </div>
                     <img
                       src="https://crushingit.tech/hackathon-assets/product.png"
@@ -150,13 +271,15 @@
             </div>
             <div class="box" id="mainbox">
               <div class="boxcontent">
-                <div class="circlebtn"onclick="showinner(2)"></div>
+                <div class="circlebtn" tabindex="10" onclick="showInner(2)"></div>
                 <div class="innerbox">
-                  <h3 >Add a custom domain</h3>
+                  <h3>Add a custom domain</h3>
                   <div class="subinner" id="subinner">
-                    <div >
+                    <div>
                       <article>
-                        Your current domain is 222219.myshopify.com but you can add a custom domain to help customers find your online store. Learn more
+                        Your current domain is 222219.myshopify.com but you can
+                        add a custom domain to help customers find your online
+                        store. Learn more
                       </article>
                       <a href="#">Learn more</a>
                       <button class="customizeTheme">Add domain</button>
@@ -171,13 +294,15 @@
             </div>
             <div class="box" id="mainbox">
               <div class="boxcontent">
-                <div class="circlebtn"onclick="showinner(3)"></div>
+                <div class="circlebtn" tabindex="2" onclick="showInner(3)"></div>
                 <div class="innerbox">
                   <h3>Name your store</h3>
                   <div class="subinner" id="subinner">
-                    <div >
+                    <div>
                       <article>
-                        Your temporary store name is currently Davii collections. The store name appears in your admin and your online store.
+                        Your temporary store name is currently Davii
+                        collections. The store name appears in your admin and
+                        your online store.
                       </article>
                       <a href="#">Learn more</a>
                       <button class="customizeTheme">Name store</button>
@@ -192,13 +317,15 @@
             </div>
             <div class="box" id="mainbox">
               <div class="boxcontent">
-                <div class="circlebtn"onclick="showinner(4)"></div>
+                <div class="circlebtn" tabindex="2" onclick="showInner(4)"></div>
                 <div class="innerbox">
-                  <h3 >Customize your online store</h3>
+                  <h3>Customize your online store</h3>
                   <div class="subinner" id="subinner">
-                    <div >
+                    <div>
                       <article>
-                        Choose a payment provider to start accepting payments. You’ll need to create an account with the payment provider and set it up with your Shopify store.
+                        Choose a payment provider to start accepting payments.
+                        You’ll need to create an account with the payment
+                        provider and set it up with your Shopify store.
                       </article>
                       <a href="#">Learn more</a>
                       <button class="customizeTheme">Set up payment</button>

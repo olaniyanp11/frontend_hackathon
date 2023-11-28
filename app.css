@@ -29,6 +29,9 @@
   padding-inline: 10px;
   gap: 10px;
 }
+.searchbar:hover {
+  border: 1px solid #e1e0e0;
+}
 .searchbar input {
   background-color: transparent;
   border: none;
@@ -69,6 +72,15 @@ input:-webkit-autofill {
   border-radius: 8px;
   gap: 10px;
 }
+div.logo {
+  background-image: url("https://crushingit.tech/hackathon-assets/shopify-icon-desktop.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  /* background: black; */
+}
 .davidcoll .namelogo {
   padding: 5px;
   border-radius: 6px;
@@ -91,7 +103,7 @@ main {
 }
 .notification {
   width: 70%;
-  padding: 6px;
+  padding: 10px;
   padding-inline: 12px;
   border-radius: 8px;
   background: var(--grey-grey-300, #1a1a1a);
@@ -109,18 +121,25 @@ main {
   background: #fff;
   box-shadow: 0px -1px 0px 0px #b5b5b5 inset;
   font-size: 13px;
+  margin-right: -30px;
 }
-.notification > div {
+.notification button:hover {
+  background: #f2f2f2;
+}
+.notification > sub {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 .notification > p {
   font-size: 13px;
 }
 .cancel {
   width: 20px;
+  height: 20px;
 }
 .setupboard {
   width: 70%;
@@ -141,7 +160,7 @@ main {
 }
 .progresscontainer #progressvalue {
   background-color: #1a1a1a;
-  display: inline-block;
+  display: block;
   height: 100%;
 }
 
@@ -180,16 +199,29 @@ article {
 /* sub boxes */
 
 .circlebtn {
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  border: 2px dashed #1a1a1a;
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  border: 2px dashed #303030;
   background-position: center;
   background-size: cover;
 }
 .circlebtn.add {
-  background-color: #303030;
-  background-image: url("https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg");
+  animation: 1s change forwards;
+}
+@keyframes change {
+  from {
+    transform: rotate(-360deg);
+    border: 2px dashed #303030;
+  }
+  to {
+    background-image: url("https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg");
+    background-color: #303030;
+    border: 2px solid #303030;
+  }
+}
+.circlebtn:hover {
+  border: 2px solid #303030;
 }
 /* setup boxes section */
 .box {
@@ -220,6 +252,19 @@ article {
   gap: 8px;
   color: white;
   margin-top: 20px;
+}
+.customizeTheme:hover {
+  background: #242424;
+}
+.customizeTheme.custom {
+  background-color: #f1f1f1;
+  color: #000;
+  border: none;
+  box-shadow: none;
+  padding: 5px 12px;
+}
+.customizeTheme.custom:hover {
+  background-color: #b5b5b5;
 }
 /* box main div */
 #mainbox {
@@ -262,4 +307,160 @@ article {
   width: 100%;
   align-items: center;
   display: none;
+}
+/* alert box */
+.alertbox {
+  position: absolute;
+  padding: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  border-radius: 14px;
+  border: 1px solid var(--stroke-s-50, #dbdbdb);
+  background: var(--White, #fff);
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+  width: 400px;
+  right: 20;
+  top: 80;
+  display: none;
+  margin: 10px;
+}
+.alertbox > div {
+  display: flex;
+  flex-direction: column;
+}
+.alertbox > div > div {
+  display: flex;
+  justify-content: space-between;
+}
+/* rushing */
+.b {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 5%;
+}
+.subone {
+  padding: 10px;
+  align-items: center;
+  gap: 8px;
+  border-top: 20px;
+  background: var(--states-hover, #f1f1f1);
+}
+.sub {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.alertbox.show {
+  display: flex;
+}
+.allnotifications {
+  /* position: absolute; */
+  display: none;
+  width: 400px;
+  padding: 20px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  top: 80px;
+  right: 10px;
+  border-radius: 14px;
+  border: 1px solid var(--stroke-s-50, #dbdbdb);
+  background: var(--White, #fff);
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+  z-index: 13242;
+  position: absolute;
+}
+.allnotifications.none {
+  display: flex;
+}
+.dav2 {
+  background-color: transparent;
+}
+.allnotifications header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  border-radius: 30px;
+  background: var(--states-hover, #f1f1f1);
+}
+.second {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+  width: 100%;
+}
+.allnotifications hr {
+  width: 100%;
+  margin-block: 10px;
+  border-bottom: 1px solid grey;
+}
+.allnotifications > div {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  border-radius: 8px;
+}
+.allnotifications > div:hover{
+  cursor: pointer;
+  color: rgb(162, 161, 161);
+}
+/* Responsive sectio  */
+
+@media (max-width: 866px) {
+}
+@media (max-width: 767px) {
+  .notification {
+    width: 90%;
+  }
+  .setupboard {
+    width: 90%;
+  }
+}
+@media (max-width: 710px) {
+  .davidcoll > p {
+    display: none;
+  }
+}
+@media (max-width: 640px) {
+  .notification {
+    width: 100%;
+  }
+  .setupboard {
+    width: 100%;
+  }
+}
+@media (max-width: 566px) {
+  .setupboard {
+    width: 100%;
+  }
+  .subinner > img {
+    display: none;
+  }
+  #navbar {
+    gap: 15px;
+  }
+  div.logo {
+    background-image: url("https://crushingit.tech/hackathon-assets/shopify-icon.svg");
+    background-size: contain;
+    width: 30px;
+  }
+}
+@media (max-width: 566px) {
+  .innerbox article {
+    width: 100%;
+  }
+}
+@media (max-width: 490px) {
+  .notification {
+    width: 100%;
+  }
+}
+@media (max-width: 450px) {
 }
